@@ -1,2 +1,3 @@
 # Card Game
-TODO: Write a project description
+This is a simple card game that I created to practice using lambda streams and JavaFX.
+
