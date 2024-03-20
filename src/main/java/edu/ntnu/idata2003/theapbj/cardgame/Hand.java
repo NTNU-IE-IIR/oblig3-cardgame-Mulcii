@@ -15,7 +15,6 @@ import no.ntnu.idatx2003.oblig3.cardgame.PlayingCard;
  */
 public class Hand {
   private ArrayList<PlayingCard> hand;
-  private final char[] suits = {'S', 'H', 'D', 'C'};
 
   /**
    * Constructs a new hand of cards.
@@ -59,7 +58,7 @@ public class Hand {
   public List<String> getHearts() {
     return this.hand.stream().
         filter(card -> card.getSuit() == 'H')
-        .map(card -> card.getFace() + String.valueOf(card.getFace()))
+        .map(card -> card.getSuit() + String.valueOf(card.getFace()))
         .toList();
   }
 

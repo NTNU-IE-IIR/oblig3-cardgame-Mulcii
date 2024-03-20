@@ -26,17 +26,6 @@ public class DeckOfCards {
     }
   }
 
-  /**
-   * Adds a card to the deck.
-   * @param card the card to add
-   * @throws IllegalArgumentException if the card is null
-   */
-  public void addCard(PlayingCard card) {
-    if (card == null) {
-      throw new IllegalArgumentException("Card can not be null.");
-    }
-    deck.add(card);
-  }
 
   /**
    * Deals a random number of cards from the deck.
@@ -58,6 +47,14 @@ public class DeckOfCards {
       deck.remove(index);
     }
     return hand;
+  }
+
+  /**
+   * Returns the cards in the deck.
+   * @return a collection of cards
+   */
+  public ArrayList<PlayingCard> getDeck() {
+    return deck;
   }
 
 }
