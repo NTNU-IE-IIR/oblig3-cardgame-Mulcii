@@ -15,6 +15,7 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
+import javafx.scene.text.Font;
 import javafx.stage.Stage;
 import no.ntnu.idatx2003.oblig3.cardgame.PlayingCard;
 
@@ -45,8 +46,10 @@ public class CardGameUi extends Application {
     BorderPane rootNode = new BorderPane();
 
     cards = new HBox();
-    cards.setMinSize(600, 400);
-    cards.setBackground(Background.fill(Color.GREEN));
+    cards.setMinHeight(400);
+    cards.setMinWidth(600);
+    cards.setSpacing(10);
+    cards.setBackground(Background.fill(Color.DARKGREEN));
     cards.alignmentProperty().set(Pos.CENTER);
     rootNode.setCenter(cards);
 
@@ -70,32 +73,40 @@ public class CardGameUi extends Application {
     rootNode.setBottom(cardInfo);
 
     Label sumFaces = new Label("Sum of faces: ");
+    sumFaces.setFont(new Font("Arial", 15));
     cardInfo.getChildren().add(sumFaces);
 
     sumResult = new Label(" ");
+    sumResult.setFont(new Font("Arial", 13));
     cardInfo.getChildren().add(sumResult);
 
     Label hearts = new Label("Hearts: ");
+    hearts.setFont(new Font("Arial", 15));
     cardInfo.getChildren().add(hearts);
 
     sumHearts = new Label(" ");
+    sumHearts.setFont(new Font("Arial", 13));
     cardInfo.getChildren().add(sumHearts);
 
-    Label Flush = new Label("Flush: ");
-    cardInfo.getChildren().add(Flush);
+    Label flush = new Label("Flush: ");
+    flush.setFont(new Font("Arial", 15));
+    cardInfo.getChildren().add(flush);
 
     flushResult = new Label(" ");
+    flushResult.setFont(new Font("Arial", 13));
     cardInfo.getChildren().add(flushResult);
 
     Label qSpade = new Label("Q of Spades: ");
+    qSpade.setFont(new Font("Arial", 15));
     cardInfo.getChildren().add(qSpade);
 
     qSpadeResult = new Label(" ");
+    qSpadeResult.setFont(new Font("Arial", 13));
     cardInfo.getChildren().add(qSpadeResult);
 
 
     stage.setTitle("Card Game");
-    stage.setScene(new Scene(rootNode, 600, 400));
+    stage.setScene(new Scene(rootNode, 800, 400));
     stage.show();
 
   }
